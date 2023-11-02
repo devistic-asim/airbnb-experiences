@@ -1,24 +1,24 @@
 import cardImg from './assets/katie-zaferes.png'
-import startImg from './assets/star.png'
+import starImg from './assets/star.png'
 import './style.css'
 
-function Nav() {
+function Card(props) {
     return (
         <>
             <div className="card">
-                <img src={cardImg} className="card--image" />
-                <span className='img--label'>Sold Out</span>
+                <img src={`./src/assets/${props.img}`} className="card--image" />
+                <span className='img--label'>{props.label}</span>
                 <div className="card--stats">
-                    <img src={startImg} className="card--star" />
-                    &nbsp;<span>5.0</span>
-                    &nbsp;<span className="gray">(6) • </span>
-                    &nbsp;<span className="gray">USA</span>
+                    <img src={starImg} className="card--star" />
+                    &nbsp;<span>{props.rating}</span>
+                    &nbsp;<span className="gray">({props.reviewCount}) • </span>
+                    &nbsp;<span className="gray">{props.country}</span>
                 </div>
-                <p>Life Lessons with Katie Zaferes</p>
-                <p><span className="bold">From $136</span> / person</p>
+                <p>{props.title}</p>
+                <p><span className="bold">From ${props.price}</span> / person</p>
             </div>
         </>
     )
 }
 
-export default Nav
+export default Card
