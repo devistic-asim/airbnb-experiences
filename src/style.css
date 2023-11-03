@@ -46,28 +46,44 @@ section {
 
 .hero--text {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .card {
     width: 185px;
     font-size: 12px;
     position: relative;
-    margin: 1rem 20px;
+    margin: 0rem 0px 1rem;
+    display: flex;          /* ADD */
+    flex: 0 0 auto;         /* ADD */
+    flex-direction: column; /* ADD */
+}
+
+.slider--horizontal::-webkit-scrollbar{
+    display: none;
+}
+
+.card:nth-child(2n){
+    margin: 0 15px 1rem;
 }
 
 .card--image {
     width: 100%;
     border-radius: 9px;
+    margin-bottom: 9px;
+    height: 250px;
+    object-fit: cover;
 }
 
-.img--label{
+.img--label {
     position: absolute;
     left: 6px;
     top: 6px;
     padding: 0.2rem 0.4rem;
     background-color: white;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 2px;
+    font-weight: 600;
 }
 
 .card--stats {
@@ -79,11 +95,11 @@ section {
     height: 14px;
 }
 
-.card p{
+.card p {
     margin: 0.1rem 0;
 }
 
-.slider--horizontal{
+.slider--horizontal {
     display: flex;
     overflow: auto;
     flex-direction: row;

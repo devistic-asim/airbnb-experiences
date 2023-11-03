@@ -6,13 +6,9 @@ import './style.css'
 const cardhtml = data.map(function (item) {
     return (
         <Card
-            img={item.coverImg}
-            rating={item.stats.rating}
-            reviewCount={item.stats.reviewCount}
-            country={item.location}
-            title={item.title}
-            price={item.price}
-            label={item.label}
+            key={item.id}
+            // item={item}
+            {...item}
         />
     )
 })
